@@ -27,11 +27,13 @@ const writePins = (pins) => {
     $('#pins-on-board').html(domString);
 }
 
+// Will supposedly use multiple times - Lauren
+
 const initialPinView = (boardId) => {
     loadPinsForBoard(boardId)
     .then(data => {
     writePins(data);
-    bindEvents();
+    bindEvents(); // Click Event
     })
     .catch(error => {
         console.log('things messed up in pins', error);

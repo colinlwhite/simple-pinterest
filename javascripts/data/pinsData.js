@@ -2,7 +2,7 @@ const loadPinsForBoard = (boardId) => {
     return new Promise((resolve, reject) => {
         $.get('../db/pins.json') 
             .done((data) => {
-                const pinsForBoards = data.pins.filter(pin => pin.board_id == boardId)
+                const pinsForBoards = data.pins.filter(pin => pin.board_id == boardId) // cleaning the data somewhat before you resolve it
                 resolve(pinsForBoards);
             })
             .fail((error) => {

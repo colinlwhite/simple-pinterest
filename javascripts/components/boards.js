@@ -16,7 +16,7 @@ const bindEvents = () => {
 const writeBoards = (boards) => {
     let domString = '';
     boards.forEach(board => {
-        const boardImg = board.pins[0] ? board.pins[0].image_url : './db/default-img.jpeg';
+        const boardImg = board.pins[0] ? board.pins[0].image_url : './db/default-img.jpeg'; // board is an object - accessing the first index of the pin
         domString += `
         <div id="${board.id}" class="board-card p-2">
           <img class="card-img-top" src="${boardImg}" 
@@ -34,7 +34,7 @@ const writeBoards = (boards) => {
 
 const intializeBoardView = () => {
     loadBoards().then((boards) => {
-        return loadPinsOnBoards(boards);
+        return loadPinsOnBoards(boards); // ex
     }).then((boardsWithPins) => {
         //console.log(boardsWithPins);
         writeBoards(boardsWithPins);
