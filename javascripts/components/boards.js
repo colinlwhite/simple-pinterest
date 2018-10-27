@@ -4,8 +4,7 @@ import {initialPinView} from './pins.js';
 
 const bindEvents = () => {
     $('#user-boards').on('click', '.board-card', (e) => {
-        const clickedBoardId = $(e.target).closest('.board-card')
-        .attr('id');
+        const clickedBoardId = $(e.target).closest('.board-card').attr('id');
         $('#boards-page').hide();
         $('#pins-page').show();
         initialPinView(clickedBoardId);
@@ -33,7 +32,7 @@ const writeBoards = (boards) => {
 
 
 const intializeBoardView = () => {
-    loadBoards().then((boards) => {
+    loadBoards().then((boards) => { 
         return loadPinsOnBoards(boards); // ex
     }).then((boardsWithPins) => {
         //console.log(boardsWithPins);

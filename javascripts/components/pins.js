@@ -29,11 +29,11 @@ const writePins = (pins) => {
 
 // Will supposedly use multiple times - Lauren
 
-const initialPinView = (boardId) => {
-    loadPinsForBoard(boardId)
+const initialPinView = (boardId) => { // from line 11 in boards.js
+    loadPinsForBoard(boardId) // line 11 in boards.js
     .then(data => {
-    writePins(data);
-    bindEvents(); // Click Event
+        writePins(data);
+        bindEvents(); // Click Event
     })
     .catch(error => {
         console.log('things messed up in pins', error);
